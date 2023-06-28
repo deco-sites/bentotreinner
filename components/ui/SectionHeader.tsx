@@ -4,7 +4,7 @@ interface Props {
   description?: string;
   alignment: "center" | "left";
   colorReverse?: boolean;
-  text?: string
+  text?: string;
 }
 
 function Header(props: Props) {
@@ -32,7 +32,7 @@ function Header(props: Props) {
                   {props.title}
                 </h1>
               )}
-              {props.text &&
+            {props.text &&
               (
                 <h2
                   class={`text-2xl leading-8 lg:leading-10
