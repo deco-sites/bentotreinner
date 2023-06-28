@@ -4,6 +4,7 @@ interface Props {
   description?: string;
   alignment: "center" | "left";
   colorReverse?: boolean;
+  text?: string
 }
 
 function Header(props: Props) {
@@ -30,6 +31,21 @@ function Header(props: Props) {
                 >
                   {props.title}
                 </h1>
+              )}
+              {props.text &&
+              (
+                <h2
+                  class={`text-2xl leading-8 lg:leading-10
+                  ${
+                    props.colorReverse
+                      ? "text-primary-content"
+                      : "text-base-content"
+                  }
+                  ${props.fontSize === "Normal" ? "lg:text-3xl" : "lg:text-4xl"}
+                `}
+                >
+                  {props.text}
+                </h2>
               )}
             {props.description &&
               (

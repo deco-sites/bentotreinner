@@ -15,6 +15,7 @@ import type { Product } from "deco-sites/std/commerce/types.ts";
 export interface Props {
   products: LoaderReturnType<Product[] | null>;
   title?: string;
+  text?: string;
   description?: string;
   layout?: {
     headerAlignment?: "center" | "left";
@@ -26,6 +27,7 @@ export interface Props {
 function ProductShelf({
   products,
   title,
+  text,
   description,
   layout,
   cardLayout,
@@ -37,12 +39,13 @@ function ProductShelf({
   }
 
   return (
-    <div class="w-full container  py-8 flex flex-col gap-12 lg:gap-16 lg:py-10">
+    <div class="bg-red-600 w-full container  py-8 flex flex-col gap-12 lg:gap-16 lg:py-10">
       <Header
         title={title || ""}
         description={description || ""}
         fontSize={layout?.headerfontSize || "Large"}
         alignment={layout?.headerAlignment || "center"}
+        text={text || "ih a lá"}
       />
 
       <div
